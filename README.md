@@ -20,3 +20,13 @@ Changes fake amount dynamically while jittering
 - Randomize
 - Dynamic
 
+[[Rage]]
+
+- Force lethal on unarmoured (scout, revolver)
+- Dormant aimbot
+- HP/2 mindmg
+- Force baim under certain HP
+- Jumpscout fix
+- Jump hitchance (Revolver, Auto, Scout)
+- Noscope hitchance
+- Exploit customisation (ticks)
