@@ -28,4 +28,5 @@ local LegitAA=function()
     end
 end
 LegitAA()
-ESwtichcheat.RegisterCallback(LegitAA)
+ESwtichcheat.RegisterCallback(LegitAA) end
+
