@@ -1,10 +1,26 @@
-local FakeLagSwitch = menu.switch("Fake Lag", "Randomizer", false)
-local FakeLagRandomSlider = menu.SliderInt("Fake Lag", "Randomizer amount", 5 , 0, 10)
-local ESwitch = menu.switch("Anti-Aim","Legit AA", false)
+local FakeLagSwitch = menu.Switch("Fake Lag", "Randomizer", false)
+local FakeLagRandomMode = menu.Combo("Fake Lag", "Randomizer presets", {"Off", "Always on", "On enemy visible", "While enemy visible"}, 0, "Safe always works, Max is Risky but OP")
+local ESwitch = menu.Switch("Anti-Aim","Legit AA", false)
 local SafeMax = menu.Combo("Anti-Aim", "Legit AA", {"Safe", "Max", "Middle"}, 0, "Safe always works, Max is Risky but OP")
+local Jitter = menu.Switch("Anti-Aim", "Jitter", false)
+local JitterSlide = menu.SliderInt("Anti-Aim", "Jitter Angle", 0, -58 ,58)
+
+
+
+local JitterFunc=function()
+    local jitteron=jitter:GetBool()
+    JitterSlide:SetVisible(jitteron)
+    while Jitter == true
+    do
+        local RandNum = math.random(-10,10)
+        antiaim.OverrideLBYOffset(JitterSlide - RandNum) 
+    end
+end
+
 local FakeLag=function()
     local FakeLagSwtichONOFF = FakeLagSwitch:GetBool()
     FakeLagRandomSlider:SetVisible(FakeLagSwitchONOFF)
+
 end
 
 FakeLag()
@@ -29,4 +45,3 @@ local LegitAA=function()
 end
 LegitAA()
 ESwtichcheat.RegisterCallback(LegitAA) end
-
