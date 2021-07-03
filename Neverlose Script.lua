@@ -6,11 +6,12 @@ local SafeMax = menu.Combo("Anti-Aim", "Legit AA", {"Safe", "Max", "Middle"}, 0,
 local Jitter = menu.Switch("Anti-Aim", "Jitter", false)
 local JitterAngle = menu.SliderInt("Anti-Aim", "Jitter Angle", 0, -58 ,58)
 local TrashTalk = menu.Switch("Misc", "Trash phrases", false)
+local JitterOff = menu.Switch("Anti-Aim","JitterOffset", false)
 local Jitter1 = menu.Slider("Anti-Aim", "First Jitter", 0, -58, 58)
 local Jitter2 = menu.Slider("Anti-Aim", "Second Jitter", 0, -58, 58)
 local LBYJitter1 = menu.Slider("Anti-Aim", "First LBY Jitter", 0, -180, 180)
 local LBYJitter2 = menu.Slider("Anti-Aim", "Second LBY Jitter", 0, -180, 180)
-local Watermark = menu.Switch("Misc", "Watermark", true)
+local WatermarkSwitch = menu.Switch("Misc", "Watermark", true)
 
 local watermark=function()
     local username = cheat.GetCheatUserName()
@@ -24,6 +25,9 @@ local watermark=function()
     end)
 end
 
+watermark()
+WatermarkSwitch.RegisterCallback(watermark)
+
 function JitterOffset()
     if (RotationJitter == 10) then
         antiaim.OverrideLBYOffset(Jitter1:GetValue())
@@ -34,6 +38,7 @@ function JitterOffset()
     end
 end
 
+JitterOffset()
 JitterOff.RegisterCallback(JitterOffset)
 
 --Talk shit get ripped
@@ -50,20 +55,27 @@ local get_phrase=function()
     return phrases[math.random(1, #phrases):gsub('\"', '')]
 end
 
-if TrashTalk == true then
-    cheat.RegisterCallback("events", function(event)
+local Trash=function()
+    if TrashTalk:GetBool() == true then
+        cheat.RegisterCallback("events", function(event)
 
-        if event:GetName() ~= "player_death" then return end
+            if event:GetName() ~= "player_death" then return end
 
-        local me = g_EngineClient:GetLocalPlayer()
-       local victim = g_EngineClient:GetPlayerForUserId(event:GetInt("userid"))
-       local attacker = g_EngineClient:GetPlayerForUserId(event:GetInt("attacker"))
+            local me = g_EngineClient:GetLocalPlayer()
+            local victim = g_EngineClient:GetPlayerForUserId(event:GetInt("userid"))
+            local attacker = g_EngineClient:GetPlayerForUserId(event:GetInt("attacker"))
 
-       if victim == attacker or attacker ~= me then return end
+            if victim == attacker or attacker ~= me then return end
 
-       g_EngineClient:ExecuteClientCmd('say "' .. get_phrase() .. '"')
-    end)
+           g_EngineClient:ExecuteClientCmd('say "' .. get_phrase() .. '"')
+        end)
+    end
 end
+
+
+Trash()
+TrashTalk:RegisterCallback(Trash)
+
 
 local JitterFunc=function()
     local jitteron=jitter:GetBool()
@@ -74,6 +86,9 @@ local JitterFunc=function()
         antiaim.OverrideLBYOffset(JitterSlide - RandNum) 
     end
 end
+
+JitterFunc()
+jitter:RegisterCallback(JitterFunc)
 
 local FakeLag=function()
     local FakeLagSwtichONOFF = FakeLagSwitch:GetBool()
