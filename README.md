@@ -31,3 +31,15 @@ Changes fake amount dynamically while jittering
 - Jump hitchance (Revolver, Auto, Scout)
 - Noscope hitchance
 - Exploit customisation (ticks)
+
+Finished list
+
+[[Misc]]
+
+- Watermark
+- Killsay
+
+[[Anti-Aim]]
+
+- Customized Jitter
+- Legit AA
