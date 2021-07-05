@@ -12,7 +12,16 @@ local Jitter2 = menu.Slider("Anti-Aim", "Second Jitter", 0, -58, 58)
 local LBYJitter1 = menu.Slider("Anti-Aim", "First LBY Jitter", 0, -180, 180)
 local LBYJitter2 = menu.Slider("Anti-Aim", "Second LBY Jitter", 0, -180, 180)
 local WatermarkSwitch = menu.Switch("Misc", "Watermark", true)
-local Resolver = menu.Switch("Resolver", "God resolver", false, "Click this to hit head all day everyday")
+local Resolver = menu.Switch("Rage Bot", "God resolver", false, "Click this to hit head all day everyday")
+local ForceLethal = menu.Switch("Rage Bot", "Force Lethal on unarmoured", false, "Forces lethal if you have scout/revolver and they are one shot")
+
+local forcelethalfunc=function()
+    local forcelethalYN = ForceLethal:GetBool()
+    if ragebot_shot.damage > 100 then
+    ragebot.OverrideMinDamage(1, 101)
+    ragebot.ForceSafety(1)
+    end
+end
 
 local resolverfunc=function()
     local ResolverTN = Resolver:GetBool()

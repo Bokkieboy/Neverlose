@@ -23,7 +23,7 @@ Changes fake amount dynamically while jittering
 
 [[Rage]]
 
-- Force lethal on unarmoured (scout, revolver)
+
 - Dormant aimbot
 - HP/2 mindmg
 - Force baim under certain HP
@@ -46,3 +46,4 @@ Finished list
 
 [[RageBot]]
 - Insta resolve button
+- Force lethal on unarmoured (scout, revolver)
