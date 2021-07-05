@@ -12,6 +12,20 @@ local Jitter2 = menu.Slider("Anti-Aim", "Second Jitter", 0, -58, 58)
 local LBYJitter1 = menu.Slider("Anti-Aim", "First LBY Jitter", 0, -180, 180)
 local LBYJitter2 = menu.Slider("Anti-Aim", "Second LBY Jitter", 0, -180, 180)
 local WatermarkSwitch = menu.Switch("Misc", "Watermark", true)
+local Resolver = menu.Switch("Resolver", "God resolver", false, "Click this to hit head all day everyday")
+
+local resolverfunc=function()
+    local ResolverTN = Resolver:GetBool()
+    ragebot.OverrideMinDamage(1, 101)
+    ragebot.ForceSafety(1)
+    ragebot.SetHitboxPriority(1, 0, 100)
+    ragebot.OverrideHitchance(1, 80)
+    ragebot.ForceHitboxSafety(1, 0)
+    ragebot.EnableMultipoints(1, 0, true)
+end
+
+resolverfunc()
+Resolver.RegisterCallback(resolverfunc)
 
 local watermark=function()
     local username = cheat.GetCheatUserName()
