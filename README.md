@@ -43,3 +43,6 @@ Finished list
 
 - Customized Jitter
 - Legit AA
+
+[[RageBot]]
+- Insta resolve button
