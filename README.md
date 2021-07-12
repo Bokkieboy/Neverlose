@@ -2,7 +2,7 @@
 
 To-do list
 
-[[Anti-Aim Modes]]
+Anti-Aim Modes
 
 - Randomized desync limiter
 Customizable desync limiter
@@ -15,13 +15,13 @@ Fully customizable AA with standing, walking, running and in air conditions
 - Ideal Jitter
 Changes fake amount dynamically while jittering
 
-[[Fakelag Modes]]
+Fakelag Modes
 
 - Fluctuate
 - Randomize
 - Dynamic
 
-[[Rage]]
+Rage
 
 
 - Dormant aimbot
@@ -34,16 +34,16 @@ Changes fake amount dynamically while jittering
 
 Finished list
 
-[[Misc]]
+Misc
 
 - Watermark
 - Killsay
 
-[[Anti-Aim]]
+Anti-Aim
 
 - Customized Jitter
 - Legit AA
 
-[[RageBot]]
+RageBot
 - Insta resolve button
 - Force lethal on unarmoured (scout, revolver)
