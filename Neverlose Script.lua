@@ -1,4 +1,4 @@
-local RotationJitter = 10
+local RotationJitter = 15
 local FakeLagSwitch = menu.Switch("Fake Lag", "Randomizer", false)
 local FakeLagRandomMode = menu.Combo("Fake Lag", "Randomizer presets", {"Off", "Always on", "On enemy visible", "While enemy visible"}, 0, "Safe always works, Max is Risky but OP")
 local ESwitch = menu.Switch("Anti-Aim","Legit AA", false)
