@@ -47,3 +47,8 @@ Anti-Aim
 RageBot
 - Insta resolve button
 - Force lethal on unarmoured (scout, revolver)
+
+## ⚠️ Important Information
+
+### Neverlose recently tweaked there API, therefore the menu still works, but slight lean angles and AA will need to be changed. I will no longer be updating this script due to neverlose slowly leaving the market, I may work on new and fun skeet LUA's but for the time being I'm experimenting with new languages.
+
